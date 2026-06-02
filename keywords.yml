@@ -1,0 +1,109 @@
+search:
+  monthly_query_name: korean_language_education
+  terms:
+    - Korean language education
+    - Korean language teaching
+    - Korean as a foreign language
+    - Korean as a second language
+    - KFL
+    - 한국어교육
+    - 한국어 교육
+    - 한국어 교수
+    - 한국어 학습
+
+topic_trends:
+  grammar_instruction:
+    - grammar
+    - syntax
+    - 문법
+    - 통사
+  vocabulary_learning:
+    - vocabulary
+    - lexical
+    - 어휘
+  speaking_instruction:
+    - speaking
+    - oral
+    - conversation
+    - 말하기
+    - 회화
+  writing_instruction:
+    - writing
+    - composition
+    - 쓰기
+    - 작문
+  reading_instruction:
+    - reading
+    - literacy
+    - 읽기
+    - 독해
+  listening_instruction:
+    - listening
+    - 듣기
+  assessment:
+    - assessment
+    - testing
+    - evaluation
+    - 평가
+    - 시험
+  technology_enhanced_learning:
+    - AI
+    - artificial intelligence
+    - online
+    - digital
+    - CALL
+    - 인공지능
+    - 온라인
+    - 디지털
+  teacher_education:
+    - teacher
+    - instructor
+    - 교사
+    - 교원
+    - 교수자
+  multicultural_learners:
+    - multicultural
+    - immigrant
+    - 다문화
+    - 이민
+
+research_gap_framework:
+  limited_longitudinal_evidence:
+    description: More longitudinal studies are needed to understand learning development over time.
+    keywords:
+      - survey
+      - perception
+      - attitude
+      - 설문
+      - 인식
+      - 태도
+  classroom_intervention_needed:
+    description: Findings would benefit from classroom intervention or experimental validation.
+    keywords:
+      - needs analysis
+      - interview
+      - perception
+      - 요구 분석
+      - 면담
+      - 인식
+  underrepresented_learner_groups:
+    description: Future work should include more diverse learner populations and contexts.
+    keywords:
+      - immigrant
+      - adult
+      - worker
+      - children
+      - 이민
+      - 성인
+      - 노동자
+      - 아동
+  digital_pedagogy_gap:
+    description: Digital and AI-supported pedagogy needs stronger design and outcome evidence.
+    keywords:
+      - AI
+      - artificial intelligence
+      - online
+      - digital
+      - 인공지능
+      - 온라인
+      - 디지털

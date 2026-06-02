@@ -1,0 +1,35 @@
+name: Monthly Korean Language Education Research Tracker
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+jobs:
+  build-report:
+    runs-on: ubuntu-latest
+    env:
+      SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
+      WOS_API_KEY: ${{ secrets.WOS_API_KEY }}
+      KCI_API_KEY: ${{ secrets.KCI_API_KEY }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run monthly tracker
+        run: python src/main.py --output-dir outputs
+
+      - name: Upload Excel output
+        uses: actions/upload-artifact@v4
+        with:
+          name: korean-language-education-research-tracker
+          path: outputs/*.xlsx
+          if-no-files-found: error
