@@ -46,7 +46,7 @@ def classify_records(clean_frame: pd.DataFrame, keyword_config: dict[str, Any]) 
 
 
 def _record_text(record: pd.Series) -> str:
-    fields = ["title", "abstract", "keywords", "journal"]
+    fields = ["title", "abstract", "concepts", "source"]
     return " ".join(str(record.get(field, "")) for field in fields).casefold()
 
 

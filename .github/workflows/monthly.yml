@@ -9,6 +9,8 @@ jobs:
   build-report:
     runs-on: ubuntu-latest
     env:
+      OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+      OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
       SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
       WOS_API_KEY: ${{ secrets.WOS_API_KEY }}
       KCI_API_KEY: ${{ secrets.KCI_API_KEY }}

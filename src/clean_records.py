@@ -23,27 +23,32 @@ def clean_records(raw_records: list[dict[str, Any]]) -> pd.DataFrame:
             frame[column] = ""
 
     frame["title"] = frame["title"].fillna("").astype(str).str.strip()
+    frame["abstract"] = frame["abstract"].fillna("").astype(str).str.strip()
+    frame["authors"] = frame["authors"].fillna("").astype(str).str.strip()
+    frame["source"] = frame["source"].fillna("").astype(str).str.strip()
     frame["doi"] = frame["doi"].fillna("").astype(str).str.lower().str.strip()
-    frame["year"] = pd.to_numeric(frame["year"], errors="coerce").astype("Int64")
+    frame["concepts"] = frame["concepts"].fillna("").astype(str).str.strip()
+    frame["publication_year"] = pd.to_numeric(frame["publication_year"], errors="coerce").astype("Int64")
+    frame["citation_count"] = pd.to_numeric(frame["citation_count"], errors="coerce").fillna(0).astype(int)
     frame["dedupe_key"] = frame.apply(_dedupe_key, axis=1)
     frame = frame.drop_duplicates(subset=["dedupe_key"], keep="first")
-    frame = frame.sort_values(by=["published_date", "title"], ascending=[False, True])
+    frame = frame.sort_values(by=["publication_date", "citation_count", "title"], ascending=[False, False, True])
     return frame[_clean_columns() + ["dedupe_key"]].reset_index(drop=True)
 
 
 def _clean_columns() -> list[str]:
     return [
-        "source",
-        "source_id",
+        "data_source",
+        "openalex_id",
         "title",
-        "authors",
-        "year",
-        "published_date",
-        "journal",
-        "doi",
-        "url",
         "abstract",
-        "keywords",
+        "authors",
+        "publication_year",
+        "publication_date",
+        "source",
+        "doi",
+        "concepts",
+        "citation_count",
         "matched_search_terms",
         "run_month",
     ]
@@ -58,5 +63,5 @@ def _dedupe_key(row: pd.Series) -> str:
     if doi:
         return f"doi:{doi}"
     normalized_title = re.sub(r"\W+", " ", str(row.get("title", "")).casefold()).strip()
-    year = row.get("year", "")
+    year = row.get("publication_year", "")
     return f"title_year:{normalized_title}:{year}"
