@@ -1,0 +1,33 @@
+search:
+  # Query terms are intentionally broad and multilingual so monthly runs can
+  # capture Korean language education work published in Korean and English.
+  terms:
+    - "Korean language education"
+    - "Korean language teaching"
+    - "Korean as a foreign language"
+    - "Korean as a second language"
+    - "한국어교육"
+    - "한국어 교육"
+    - "한국어 교수"
+    - "한국어 학습"
+  default_months_back: 1
+
+classification:
+  topic_keywords:
+    curriculum: ["curriculum", "syllabus", "교육과정", "교과"]
+    assessment: ["assessment", "testing", "evaluation", "평가", "시험"]
+    vocabulary: ["vocabulary", "lexical", "어휘"]
+    grammar: ["grammar", "syntax", "문법", "통사"]
+    speaking: ["speaking", "oral", "conversation", "말하기", "회화"]
+    writing: ["writing", "composition", "쓰기", "작문"]
+    reading: ["reading", "literacy", "읽기", "독해"]
+    listening: ["listening", "듣기"]
+    technology: ["AI", "artificial intelligence", "CALL", "online", "digital", "technology", "인공지능", "온라인", "디지털", "테크놀로지"]
+    teacher_education: ["teacher", "instructor", "교사", "교원", "교수자"]
+    learner_identity: ["identity", "motivation", "affect", "정체성", "동기", "정의"]
+    multicultural: ["multicultural", "immigrant", "다문화", "이민"]
+  gap_keywords:
+    longitudinal_needed: ["cross-sectional", "survey", "needs analysis", "횡단", "설문", "요구 분석"]
+    classroom_intervention_needed: ["perception", "attitude", "인식", "태도"]
+    underrepresented_learners: ["adult", "children", "immigrant", "worker", "성인", "아동", "이주", "노동자"]
+    digital_pedagogy_gap: ["AI", "online", "digital", "인공지능", "온라인", "디지털"]
