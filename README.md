@@ -54,6 +54,17 @@ The tracker searches OpenAlex works with the terms in `keywords.yml` and filters
 - concepts / topics
 - citation count
 
+## AI-powered research gap analysis
+
+Set `OPENAI_API_KEY` to enable AI-powered per-paper analysis through the OpenAI Responses API. You can optionally override the model with `OPENAI_MODEL`; the default is `gpt-4o-mini`.
+
+```bash
+export OPENAI_API_KEY="your-openai-api-key"
+export OPENAI_MODEL="gpt-4o-mini"
+```
+
+For each paper, the tracker classifies topic, methodology, participants, and context, then extracts limitations and future research suggestions. If `OPENAI_API_KEY` is not set or the API call fails, the tracker uses deterministic keyword-based fallback analysis and marks the `analysis_method` column accordingly.
+
 ## Run locally
 
 Run the tracker for the previous calendar month:
@@ -81,7 +92,7 @@ The workbook contains these sheets:
 1. **Raw Records** — OpenAlex records after source-level normalization.
 2. **Clean Records** — normalized and deduplicated records.
 3. **Topic Trends** — trend labels and record counts based on `keywords.yml`.
-4. **Research Gap Framework** — configured gap categories, descriptions, and matched counts.
+4. **Research_Gap_Framework** — per-paper AI-powered analysis with topic, methodology, participants, context, limitations, future research suggestions, research gap labels, confidence, and analysis method.
 5. **Suggested Future Research** — suggested follow-up directions based on matched gaps.
 
 ## Configuration
@@ -102,6 +113,11 @@ Recommended repository secrets:
 
 - `OPENALEX_API_KEY` — OpenAlex API key, if required for your deployment.
 - `OPENALEX_MAILTO` — email address sent to OpenAlex for polite API usage.
+- `OPENAI_API_KEY` — enables AI-powered research gap analysis.
+
+Optional repository variable:
+
+- `OPENAI_MODEL` — optional model override for AI-powered analysis.
 
 Reserved future repository secrets:
 

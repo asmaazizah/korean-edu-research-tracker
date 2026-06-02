@@ -11,6 +11,8 @@ jobs:
     env:
       OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
       OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4o-mini' }}
       SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
       WOS_API_KEY: ${{ secrets.WOS_API_KEY }}
       KCI_API_KEY: ${{ secrets.KCI_API_KEY }}

@@ -11,7 +11,7 @@ SHEET_ORDER = [
     "Raw Records",
     "Clean Records",
     "Topic Trends",
-    "Research Gap Framework",
+    "Research_Gap_Framework",
     "Suggested Future Research",
 ]
 
@@ -33,7 +33,7 @@ def export_tracker_excel(
         "Raw Records": pd.DataFrame(raw_records),
         "Clean Records": clean_records,
         "Topic Trends": topic_trends,
-        "Research Gap Framework": research_gap_framework,
+        "Research_Gap_Framework": research_gap_framework,
         "Suggested Future Research": suggested_future_research,
     }
 
